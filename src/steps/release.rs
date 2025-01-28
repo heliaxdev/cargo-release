@@ -57,7 +57,7 @@ impl ReleaseStep {
             .manifest
             .metadata()
             // When evaluating dependency ordering, we need to consider optional dependencies
-            .features(cargo_metadata::CargoOpt::AllFeatures)
+            // .features(cargo_metadata::CargoOpt::AllFeatures)
             .exec()?;
         let ws_config = config::load_workspace_config(&self.config, &ws_meta)?;
         let mut pkgs = plan::load(&self.config, &ws_meta)?;
